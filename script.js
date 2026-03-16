@@ -1,84 +1,86 @@
-<<<<<<< HEAD
 const taskForm = document.getElementById('task-form');
 const taskInput = document.getElementById('task-input');
 const assigneeInput = document.getElementById('assignee-input');
 const taskList = document.getElementById('task-list');
 
-// Task erstellen
-taskForm.addEventListener('submit', function(e) {
+let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+renderTasks();
+
+taskForm.addEventListener('submit', function (e) {
   e.preventDefault();
-  addTask(taskInput.value, assigneeInput.value);
+
+  const taskName = taskInput.value.trim();
+  const assignee = assigneeInput.value.trim();
+
+  if (taskName === '') return;
+
+  const newTask = {
+    id: Date.now(),
+    name: taskName,
+    assignee: assignee || 'Niemand',
+    completed: false
+  };
+
+  tasks.push(newTask);
+  saveTasks();
+  renderTasks();
   taskForm.reset();
 });
 
-function addTask(taskName, assignee) {
-  const li = document.createElement('li');
-  
-  const taskInfo = document.createElement('div');
-  taskInfo.className = 'task-info';
-  taskInfo.innerHTML = `<strong>${taskName}</strong><small>Zugewiesen an: ${assignee || 'Niemand'}</small>`;
-  
-  const actions = document.createElement('div');
-  
-  const completeBtn = document.createElement('button');
-  completeBtn.textContent = '✅';
-  completeBtn.addEventListener('click', () => {
-    li.classList.toggle('completed');
-  });
+function saveTasks() {
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+}
 
-  const deleteBtn = document.createElement('button');
-  deleteBtn.textContent = '🗑️';
-  deleteBtn.addEventListener('click', () => {
-    taskList.removeChild(li);
-  });
-  
-  actions.appendChild(completeBtn);
-  actions.appendChild(deleteBtn);
-  
-  li.appendChild(taskInfo);
-  li.appendChild(actions);
-  
-  taskList.appendChild(li);
-=======
-const taskForm = document.getElementById('task-form');
-const taskInput = document.getElementById('task-input');
-const assigneeInput = document.getElementById('assignee-input');
-const taskList = document.getElementById('task-list');
+function renderTasks() {
+  taskList.innerHTML = '';
 
-// Task erstellen
-taskForm.addEventListener('submit', function(e) {
-  e.preventDefault();
-  addTask(taskInput.value, assigneeInput.value);
-  taskForm.reset();
-});
+  tasks.forEach(task => {
+    const li = document.createElement('li');
 
-function addTask(taskName, assignee) {
-  const li = document.createElement('li');
-  
-  const taskInfo = document.createElement('div');
-  taskInfo.className = 'task-info';
-  taskInfo.innerHTML = `<strong>${taskName}</strong><small>Zugewiesen an: ${assignee || 'Niemand'}</small>`;
-  
-  const actions = document.createElement('div');
-  
-  const completeBtn = document.createElement('button');
-  completeBtn.textContent = '✅';
-  completeBtn.addEventListener('click', () => {
-    li.classList.toggle('completed');
-  });
+    if (task.completed) {
+      li.classList.add('completed');
+    }
 
-  const deleteBtn = document.createElement('button');
-  deleteBtn.textContent = '🗑️';
-  deleteBtn.addEventListener('click', () => {
-    taskList.removeChild(li);
+    const taskInfo = document.createElement('div');
+    taskInfo.className = 'task-info';
+
+    const title = document.createElement('span');
+    title.className = 'task-title';
+    title.textContent = task.name;
+
+    const assignee = document.createElement('small');
+    assignee.className = 'task-assignee';
+    assignee.textContent = 'Zugewiesen an: ' + task.assignee;
+
+    taskInfo.appendChild(title);
+    taskInfo.appendChild(assignee);
+
+    const actions = document.createElement('div');
+    actions.className = 'actions';
+
+    const completeBtn = document.createElement('button');
+    completeBtn.textContent = '✅';
+    completeBtn.addEventListener('click', function () {
+      task.completed = !task.completed;
+      saveTasks();
+      renderTasks();
+    });
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = '🗑️';
+    deleteBtn.addEventListener('click', function () {
+      tasks = tasks.filter(t => t.id !== task.id);
+      saveTasks();
+      renderTasks();
+    });
+
+    actions.appendChild(completeBtn);
+    actions.appendChild(deleteBtn);
+
+    li.appendChild(taskInfo);
+    li.appendChild(actions);
+
+    taskList.appendChild(li);
   });
-  
-  actions.appendChild(completeBtn);
-  actions.appendChild(deleteBtn);
-  
-  li.appendChild(taskInfo);
-  li.appendChild(actions);
-  
-  taskList.appendChild(li);
->>>>>>> bbf1c131cccd5eb0dd9a0d9bdb4b7cd20296e0f1
 }
