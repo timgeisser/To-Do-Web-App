@@ -9,16 +9,8 @@ name: Lint Code Base
 on:
   push:
     branches: [ "main" ]
-    paths:
-    - "**/*-html"
-    - "**/*.css"
-    - "**/*.js"
   pull_request:
     branches: [ "main" ]
-    paths:
-    - "**/*.html"
-    - "**/*.css"
-    - "**/*.js"
 jobs:
   run-lint:
     runs-on: ubuntu-latest
@@ -29,6 +21,16 @@ jobs:
           # Full git history is needed to get a proper list of changed files within `super-linter`
           fetch-depth: 0
 
+      - name: Detect relevant changes
+        id: changes
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            web:
+              -'**/*.html'
+              -'**/*.css'
+              -'**/*.js'
+      
       - name: Lint Code Base
         uses: github/super-linter@v4
         env:
