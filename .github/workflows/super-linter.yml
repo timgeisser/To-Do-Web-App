@@ -9,8 +9,16 @@ name: Lint Code Base
 on:
   push:
     branches: [ "main" ]
+    paths:
+    - "**/*.html"
+    - "**/*.css"
+    - "**/*.js"
   pull_request:
     branches: [ "main" ]
+    paths:
+    - "**/*.html"
+    - "**/*.css"
+    - "**/*.js"
 jobs:
   run-lint:
     runs-on: ubuntu-latest
