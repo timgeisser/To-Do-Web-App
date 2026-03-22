@@ -24,5 +24,5 @@ To-Do-Web-App
 6. Review- und Merge-Prozess:
    - Keine direkten Änderungen auf main
    - Änderungen über Pull Request
-   - Linter läuft bei Änderungen von HTML, CSS, JS drüber und wenn nicht grün, kann nicht gemerged werden (Qualitätssicherung)
+   - Linter läuft bei Änderungen von HTML, CSS, JS -Dateien drüber und wenn nicht grün, kann nicht gemerged werden (Qualitätssicherung)
    - Mind. 1 Reviewer bevor Merge
