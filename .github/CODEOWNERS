@@ -1,0 +1,11 @@
+*.html @Tomo544
+*.css @Tomo544
+*.js @Tomo544
+.github/workflows @timgeisser
+.github/pull_request_template.md @timgeisser
+.github/CODEOWNERS @timgeisser
+.SuperLinter @timgeisser
+README.md @poUsername
+docs/ @poUsername
+*.pptx @poUsername
+*.docx @poUsername
