@@ -3,6 +3,10 @@ const taskInput = document.getElementById('task-input');
 const assigneeInput = document.getElementById('assignee-input');
 const taskList = document.getElementById('task-list');
 
+const featureFlags = {
+  newUI: false
+};
+
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
 renderTasks();
@@ -82,8 +86,6 @@ function renderTasks() {
     li.appendChild(actions);
 
     taskList.appendChild(li);
-    const featureFlags = {
-  newUI: false
-};
+    
   });
 }
