@@ -15,6 +15,8 @@ Wir verwenden GitHub Flow:
 3. Code wird vor dem Merge reviewed
 4. Nach erfolgreichem Review wird in main gemerged
 
+Für Pull Requests auf main ist mindestens ein Approval erforderlich. Ein Merge ohne erfolgreiches Review ist nicht erlaubt.
+
 ### Naming Convention
 
 Branches werden wie folgt benannt:
