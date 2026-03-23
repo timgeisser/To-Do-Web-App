@@ -1,6 +1,6 @@
-*.html @devUsername
-*.css @devUsername
-*.js @devUsername
+*.html @Tomo544
+*.css @Tomo544
+*.js @Tomo544
 .github/workflows @timgeisser
 .github/pull_request_template.md @timgeisser
 .github/CODEOWNERS @timgeisser
