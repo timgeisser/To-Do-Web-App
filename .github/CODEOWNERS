@@ -1,11 +1,10 @@
-*.html @Tomo544
-*.css @Tomo544
-*.js @Tomo544
-.github/workflows @timgeisser
-.github/pull_request_template.md @timgeisser
-.github/CODEOWNERS @timgeisser
-.SuperLinter @timgeisser
-README.md @poUsername
-docs/ @poUsername
-*.pptx @poUsername
-*.docx @poUsername
+*.html @Tomo544 @timgeisser
+*.css @Tomo544 @timgeisser
+*.js @Tomo544 @timgeisser
+.github/workflows/ @timgeisser @Tomo544
+.github/pull_request_template.md @timgeisser @Tomo544
+.github/CODEOWNERS @timgeisser @Tomo544
+README.md @poUsername @timgeisser
+docs/ @poUsername @timgeisser
+*.pptx @poUsername @timgeisser
+*.docx @poUsername @timgeisser
