@@ -82,5 +82,8 @@ function renderTasks() {
     li.appendChild(actions);
 
     taskList.appendChild(li);
+    const featureFlags = {
+  newUI: false
+};
   });
 }
