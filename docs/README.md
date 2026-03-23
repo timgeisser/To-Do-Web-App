@@ -1,3 +1,33 @@
+### Workflow
+
+1. Neuen Branch erstellen (feature/*)
+2. Änderungen committen
+3. Pull Request erstellen
+4. Review durchführen
+5. Merge in main
+
+## Branch Strategy (GitHub Flow)
+
+Wir verwenden GitHub Flow:
+
+1. Neue Features werden in einem separaten Branch entwickelt
+2. Änderungen erfolgen über Pull Requests
+3. Code wird vor dem Merge reviewed
+4. Nach erfolgreichem Review wird in main gemerged
+
+### Naming Convention
+
+Branches werden wie folgt benannt:
+
+- feature/<beschreibung>  → neue Features
+- bugfix/<beschreibung>  → Fehlerbehebungen
+- hotfix/<beschreibung>  → dringende Fixes
+
+Beispiele:
+- feature/login-page
+- bugfix/navbar-error
+
+
 To-Do-Web-App
 
 1. Projektbeschreibung:
