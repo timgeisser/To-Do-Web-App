@@ -56,3 +56,6 @@ To-Do-Web-App
    - Änderungen über Pull Request
    - Linter läuft bei Änderungen von HTML, CSS, JS -Dateien drüber und wenn nicht grün, kann nicht gemerged werden (Qualitätssicherung)
    - Mind. 1 Reviewer bevor Merge
+
+   
+// Test for CODEOWNERS review assignment
