@@ -4,7 +4,7 @@ const assigneeInput = document.getElementById('assignee-input');
 const taskList = document.getElementById('task-list');
 
 const featureFlags = {
-  newUI: false
+  newUI: true
 };
 
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
