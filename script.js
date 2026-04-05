@@ -4,7 +4,7 @@ const assigneeInput = document.getElementById('assignee-input');
 const taskList = document.getElementById('task-list');
 
 const featureFlags = {
-  newUI: false
+  newUI: true
 };
 
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
@@ -39,6 +39,12 @@ function saveTasks() {
 function renderTasks() {
   taskList.innerHTML = '';
 
+  if (featureFlags.newUI) {
+    taskList.classList.add('new-ui');
+  } else {
+    taskList.classList.remove('new-ui');
+  }
+
   tasks.forEach(task => {
     const li = document.createElement('li');
 
@@ -51,20 +57,29 @@ function renderTasks() {
 
     const title = document.createElement('span');
     title.className = 'task-title';
-    title.textContent = task.name;
+    title.textContent = featureFlags.newUI ? `✨ ${task.name}` : task.name;
 
     const assignee = document.createElement('small');
     assignee.className = 'task-assignee';
-    assignee.textContent = 'Zugewiesen an: ' + task.assignee;
+    assignee.textContent = featureFlags.newUI
+      ? `👤 ${task.assignee}`
+      : 'Zugewiesen an: ' + task.assignee;
 
     taskInfo.appendChild(title);
     taskInfo.appendChild(assignee);
+
+    if (featureFlags.newUI) {
+      const badge = document.createElement('span');
+      badge.className = 'feature-badge';
+      badge.textContent = 'New UI';
+      taskInfo.appendChild(badge);
+    }
 
     const actions = document.createElement('div');
     actions.className = 'actions';
 
     const completeBtn = document.createElement('button');
-    completeBtn.textContent = '✅';
+    completeBtn.textContent = featureFlags.newUI ? 'Als erledigt markieren' : '✔';
     completeBtn.addEventListener('click', function () {
       task.completed = !task.completed;
       saveTasks();
@@ -72,7 +87,7 @@ function renderTasks() {
     });
 
     const deleteBtn = document.createElement('button');
-    deleteBtn.textContent = '🗑️';
+    deleteBtn.textContent = featureFlags.newUI ? 'Löschen' : '🗑';
     deleteBtn.addEventListener('click', function () {
       tasks = tasks.filter(t => t.id !== task.id);
       saveTasks();
@@ -86,6 +101,5 @@ function renderTasks() {
     li.appendChild(actions);
 
     taskList.appendChild(li);
-    
   });
 }
