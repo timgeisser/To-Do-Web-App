@@ -39,6 +39,15 @@ Beispiele:
 - feature/login-page
 - bugfix/navbar-error
 
+## Guidelines für überschaubare Änderungen
+
+Änderungen sollen möglichst klein und klar sein, damit sie von allen Teammitgliedern einfach verstanden und überprüft werden können.
+
+Regeln
+- Änderungen sollen klein, klar abgegrenzt und reviewbar sein
+- Ein Pull Request behandelt nur ein Thema
+- Ein Pull Request soll idealerweise nicht mehr als 300 geänderte Zeilen enthalten
+- Grössere Änderungen müssen in mehrere kleinere Pull Requests aufgeteilt werden
 
 To-Do-Web-App
 
