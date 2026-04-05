@@ -79,7 +79,7 @@ function renderTasks() {
     actions.className = 'actions';
 
     const completeBtn = document.createElement('button');
-    completeBtn.textContent = featureFlags.newUI ? 'Erledigen' : '✔';
+    completeBtn.textContent = featureFlags.newUI ? 'Als erledigt markieren' : '✔';
     completeBtn.addEventListener('click', function () {
       task.completed = !task.completed;
       saveTasks();
