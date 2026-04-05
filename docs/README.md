@@ -6,6 +6,15 @@
 4. Der Reviewer prüft den Pull Request anhand der Review Checklist
 5. Falls nötig, werden Änderungen verlangt und anschliessend erneut geprüft
 6. Der Pull Request wird erst in Main gemerged, wenn alle CI Checks erfolgreich sind und die Definition of Done erfüllt ist
+Demo für Draft Pull Request
+
+### Workflow
+
+1. Neuen Branch erstellen (feature/*)
+2. Änderungen committen
+3. Pull Request erstellen
+4. Review durchführen
+5. Merge in main
 
 ## Branch Strategy (GitHub Flow)
 
