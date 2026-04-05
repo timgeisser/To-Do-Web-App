@@ -27,9 +27,12 @@ jobs:
         with:
           filters: |
             web:
-              -'**/*.html'
-              -'**/*.css'
-              -'**/*.js'
+              - '*.html'
+              - '*.css'
+              - '*.js'
+              - '**/*.html'
+              - '**/*.css'
+              - '**/*.js'
       
       - name: Lint Code Base
         if: steps.changes.outputs.web == 'true'
