@@ -102,3 +102,24 @@ li.completed .task-title {
   padding: 8px 10px;
   font-size: 14px;
 }
+
+#task-list.new-ui li {
+  border-left: 4px solid #4caf50;
+  background-color: #f6fff8;
+}
+
+#task-list.new-ui .task-title {
+  font-weight: 700;
+  color: #1b5e20;
+}
+
+.feature-badge {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 4px 8px;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
