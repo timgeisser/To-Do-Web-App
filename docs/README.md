@@ -1,3 +1,11 @@
+### Code Review Workflow
+
+1. Für jede Änderung wird ein eigener Branch erstellt (feature/*)
+2. Änderungen werden in einem Pull Request eingereicht
+3. Das dazugehörige Issue wird im Pull Request verlinkt.
+4. Der Reviewer prüft den Pull Request anhand der Review Checklist
+5. Falls nötig, werden Änderungen verlangt und anschliessend erneut geprüft
+6. Der Pull Request wird erst in Main gemerged, wenn alle CI Checks erfolgreich sind und die Definition of Done erfüllt ist
 Demo für Draft Pull Request
 
 ### Workflow
