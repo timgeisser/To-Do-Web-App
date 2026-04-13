@@ -1,3 +1,5 @@
+Welcome to our Project
+
 ### Code Review Workflow
 
 1. Für jede Änderung wird ein eigener Branch erstellt (feature/*)
